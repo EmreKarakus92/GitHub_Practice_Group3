@@ -9,31 +9,36 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class loginStepDefs {
+public class LoginStepDefs {
 
     LoginPage loginPage = new LoginPage();
+
     @Given("User is on the login page")
     public void user_is_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
+
     @When("User enters valid username")
     public void user_enters_valid_username() {
         loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("username"));
 
     }
+
     @When("User enters valid password")
     public void user_enters_valid_password() {
         loginPage.passwordInputBox.sendKeys(ConfigurationReader.getProperty("password"));
     }
+
     @When("User clicks login button")
     public void user_clicks_login_button() {
-       loginPage.loginButton.click();
+        loginPage.loginButton.click();
     }
+
     @Then("User should land on Dashboard page")
     public void user_should_land_on_dashboard_page() {
-        String expectedTitle = "Dashboard - Seamlessly" ;
+        String expectedTitle = "Dashboard - Seamlessly";
         String actualTitle = Driver.getDriver().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
     }
 
     @When("User enters invalid username")
@@ -44,12 +49,18 @@ public class loginStepDefs {
 
     @And("User enters invalid password")
     public void userEntersInvalidPassword() {
-        String password = "wrongPassword" ;
+        String password = "wrongPassword";
         loginPage.passwordInputBox.sendKeys(password);
     }
 
     @Then("User should see error message")
     public void userShouldSeeErrorMessage() {
         Assert.assertTrue(loginPage.invalidCredentialsErrorMessage.isDisplayed());
+    }
+
+
+    @Given("user should be login")
+    public void userShouldBeLogin() {
+        loginPage.loginFunction();
     }
 }
