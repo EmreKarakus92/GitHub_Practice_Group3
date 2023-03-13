@@ -18,12 +18,13 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
     public WebElement invalidCredentialsErrorMessage;
 
-
-    public  void loginFunction(String username, String password){
-        usernameInputBox.sendKeys(username);
-        passwordInputBox.sendKeys(password);
+    public  void loginFunction(){
+        usernameInputBox.sendKeys(ConfigurationReader.getProperty("username"));
+        passwordInputBox.sendKeys(ConfigurationReader.getProperty("password"));
         loginButton.click();
     }
+
+
 
 
 
