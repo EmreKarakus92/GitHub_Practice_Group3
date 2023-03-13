@@ -9,8 +9,5 @@
         <module name="GitHub_Practice_Group3" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="GitHub_Practice_Group3" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
