@@ -61,7 +61,7 @@ public class LoginStepDefs {
 
 
     @Given("user should be login")
-    public void userShouldBeLogin() {
+    public void user_should_be_login() {
         loginPage.loginFunction();
     }
 }
