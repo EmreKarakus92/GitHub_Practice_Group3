@@ -1,1 +1,1 @@
-file:src/test/resources/features/Login.feature:7:13
+file:src/test/resources/features/photos.feature:7
