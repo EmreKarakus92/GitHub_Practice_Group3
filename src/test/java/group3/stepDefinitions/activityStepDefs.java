@@ -24,7 +24,7 @@ public class activityStepDefs {
     @Then("User see URL contains {string}")
     public void userSeeURLContains(String expectedUrlContained) {
 
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().endsWith(expectedUrlContained));
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedUrlContained));
     }
 
     @Then("User see title equals {string}")
